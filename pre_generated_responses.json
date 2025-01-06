@@ -1,0 +1,44 @@
+[
+  {
+    "error": "Index out of bounds",
+    "solution": "To fix an 'Index out of bounds' error, ensure that you're not trying to access an array element at an index that doesn't exist. Check your array length and make sure all array accesses are within the valid range.",
+    "reason": "This error occurs when you try to access an array element using an index that is either negative or greater than or equal to the array's length. Arrays in most programming languages are zero-indexed, meaning the first element is at index 0, and the last element is at index length - 1.",
+    "reproductionSteps": [
+      "Create an array with a specific number of elements",
+      "Try to access an element at an index that is equal to or greater than the array's length",
+      "Or, try to access an element at a negative index"
+    ],
+    "practiceProblem": {
+      "description": "Fix the 'Index out of bounds' error in the given code",
+      "initialCode": "function getLastElement(arr) {\n  return arr[arr.length];\n}\n\nconst numbers = [1, 2, 3, 4, 5];\nconsole.log(getLastElement(numbers));",
+      "instructions": "Modify the getLastElement function to correctly return the last element of the array without causing an 'Index out of bounds' error.",
+      "expectedOutput": "The last element of the array (in this case, 5) should be printed to the console.",
+      "hints": [
+        "Remember that array indices start at 0",
+        "The last index of an array is always one less than its length"
+      ],
+      "solution": "function getLastElement(arr) {\n  return arr[arr.length - 1];\n}\n\nconst numbers = [1, 2, 3, 4, 5];\nconsole.log(getLastElement(numbers));"
+    }
+  },
+  {
+    "error": "Undefined is not a function",
+    "solution": "This error occurs when you're trying to call something as a function, but it's not actually a function. Check that you're using the correct variable or method name, and that it's properly defined before you try to call it.",
+    "reason": "'Undefined is not a function' typically happens when you try to invoke a variable or property that is undefined as if it were a function. This can occur due to typos in function names, attempting to use a method that doesn't exist, or trying to use a function before it's defined.",
+    "reproductionSteps": [
+      "Declare a variable but don't assign it a function",
+      "Try to call this variable as if it were a function",
+      "Or, try to call a method on an object that doesn't exist"
+    ],
+    "practiceProblem": {
+      "description": "Fix the 'Undefined is not a function' error in the given code",
+      "initialCode": "const calculator = {\n  add: function(a, b) { return a + b; },\n  subtract: function(a, b) { return a - b; }\n};\n\nconsole.log(calculator.multiply(5, 3));",
+      "instructions": "Modify the code to prevent the 'Undefined is not a function' error when trying to use the multiply method. Instead, it should return the product of the two numbers.",
+      "expectedOutput": "The product of 5 and 3 (15) should be printed to the console.",
+      "hints": [
+        "Check if the method exists before trying to use it",
+        "Consider adding the missing method to the calculator object"
+      ],
+      "solution": "const calculator = {\n  add: function(a, b) { return a + b; },\n  subtract: function(a, b) { return a - b; },\n  multiply: function(a, b) { return a * b; }\n};\n\nconsole.log(calculator.multiply(5, 3));"
+    }
+  }
+]
